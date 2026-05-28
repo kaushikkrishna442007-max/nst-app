@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: nst-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+    # For GPU support you need a paid Render plan.
+    # On free tier NST runs on CPU (slow but works for small images).
