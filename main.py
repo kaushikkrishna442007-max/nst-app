@@ -145,7 +145,9 @@ def run_nst_job(job_id, content_path, style_path, output_path,
         save_job(job_id, j)
 
     try:
+        print(f"[JOB {job_id}] Starting nst_core...")
         import nst_core
+        print(f"[JOB {job_id}] nst_core imported, running job...")
         nst_core.run_job(
             content_path   = content_path,
             style_path     = style_path,
