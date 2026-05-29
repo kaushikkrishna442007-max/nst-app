@@ -23,7 +23,7 @@ app.add_middleware(
 
 # ── Redis ─────────────────────────────────────────────────────────────────────
 REDIS_URL = os.environ.get("REDIS_URL", "")
-r = redis.from_url(REDIS_URL, decode_responses=True, ssl_cert_reqs=None)
+r = redis.from_url(REDIS_URL, decode_responses=True)
 
 # ── Directories ───────────────────────────────────────────────────────────────
 UPLOAD_DIR = "uploads"
