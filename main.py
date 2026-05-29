@@ -13,9 +13,12 @@ from fastapi.staticfiles import StaticFiles
 app = FastAPI(title="Neural Style Transfer API")
 
 # ── CORS (allow your frontend origin) ────────────────────────────────────────
+from fastapi.middleware.cors import CORSMiddleware
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],          # tighten to your Netlify/Vercel URL in production
+    allow_origins=["*"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
